@@ -20,7 +20,7 @@ public class adminDaoImplementation implements adminDao {
 		try (Session ses = HibernateUtil.getSession()) {
 			// getting rows of a room table
 			Query qu = ses.createQuery("from room");
-			List<room> roomList = qu.getResultList();
+			List<room> roomList = qu.getResultList();             // this will show the room list
 			return roomList;
 		}
 	}
@@ -46,7 +46,7 @@ public class adminDaoImplementation implements adminDao {
 			ses.beginTransaction();
 			String roomName = r1.getRoomName();
 			room r2 = null;
-			// checking for existing roomname
+			// checking for existing room name
 			r2 = (room) ses.createQuery("from room where roomName=:roomName").setParameter("roomName", roomName)
 					.uniqueResult();
 			// if room name is unique then we can save the room

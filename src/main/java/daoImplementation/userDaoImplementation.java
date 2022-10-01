@@ -64,7 +64,7 @@ public class userDaoImplementation implements userDao {
 			ses.beginTransaction();
 			user u1 = ses.get(user.class, uId);
 			if (u1.getUserPassword().equals(oldPwd)) {
-				int status = ses.createQuery("update user set userPassword=:newPwd where uId=:uId")
+				int status = ses.createQuery("update user set userPassword=:newPwd where userId=:uId")
 						.setParameter("newPwd", newPwd).setParameter("uId", uId).executeUpdate();
 				ses.getTransaction().commit();
 				return status;

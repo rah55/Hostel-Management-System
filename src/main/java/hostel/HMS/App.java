@@ -16,11 +16,11 @@ public class App
     	static Logger log=Logger.getLogger(App.class);
     	 public static void main( String[] args )throws GlobalException
     	    {
-    	    	Scanner bs=new Scanner(System.in);
+    	    	Scanner sc=new Scanner(System.in);
     	    	log.info("\t\t\t\t\t---------WELCOME TO HOSTEL MANAGMENT SYSTEM----------");
     	    	loginRegister loginreg = new loginRegisterImplementation();
     	    	log.info("\nPress 1. For Registeration\nPress 2. For Login");
-    	    	int op=bs.nextInt();
+    	    	int op=sc.nextInt();
     	    	
     	    	switch(op) {
     	    	case 1->loginreg.register();
